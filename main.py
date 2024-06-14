@@ -32,7 +32,7 @@ def omikuji():
 
     return omikuji_list[random.randrange(10)]
 
-@app.post("/index", response_class=HTMLResponse)
+@app.get("/index", response_class=HTMLResponse)  # POSTからGETに変更
 def get_index():
     html_content = """
     <!DOCTYPE html>
