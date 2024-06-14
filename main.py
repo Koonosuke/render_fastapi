@@ -1,11 +1,11 @@
 from typing import Optional
 
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse  # HTMLResponseを追加
 
 import random  # randomライブラリを追加
 
 app = FastAPI()
-
 
 @app.get("/")
 async def root():
@@ -31,3 +31,21 @@ def omikuji():
     ]
 
     return omikuji_list[random.randrange(10)]
+
+@app.post("/index", response_class=HTMLResponse)
+def get_index():
+    html_content = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Index Page</title>
+    </head>
+    <body>
+        <h1>Welcome to the Index Page</h1>
+        <p>This is a sample HTML page served by FastAPI.</p>
+    </body>
+    </html>
+    """
+    return html_content
