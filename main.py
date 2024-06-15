@@ -1,14 +1,10 @@
 from typing import Optional
+
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles  # StaticFilesを追加→写真追加のため
+from fastapi.responses import HTMLResponse  
 
-import random
-
+import random 
 app = FastAPI()
-
-
-app.mount("/static", StaticFiles(directory="static"), name="static")//これも写真のため追加
 
 @app.get("/")
 async def root():
@@ -35,7 +31,7 @@ def omikuji():
 
     return omikuji_list[random.randrange(10)]
 
-@app.get("/index", response_class=HTMLResponse)
+@app.get("/index", response_class=HTMLResponse) 
 def get_index():
     html_content = """
     <!DOCTYPE html>
@@ -82,10 +78,12 @@ def get_index():
     </head>
     <body>
         <div class="container">
-            <img src="/static/inu.png" alt="プロフィール写真" class="profile-pic">
+            <img src="inu.png" alt="プロフィール写真" class="profile-pic">
             <h1>自己紹介</h1>
             <p>東京電機大学3年岸です。</p>
             <p>エントリーシートかかないと、</p>
+            <p>写真表示されなかった。静的だから？</p>
+           
         </div>
     </body>
     </html>
