@@ -89,3 +89,7 @@ def get_index():
     </html>
     """
     return html_content
+
+@app.post("/present")
+async def give_present(present):
+    return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}
