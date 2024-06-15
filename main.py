@@ -35,44 +35,58 @@ def omikuji():
 @app.get("/index", response_class=HTMLResponse)  # POSTからGETに変更
 def get_index():
     html_content = """
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>課題ページ</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                background-color: #f0f0f0;
-            }
-            .container {
-                background-color: #ffffff;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                padding: 20px;
-                text-align: center;
-            }
-            h1 {
-                color: #333;
-            }
-            p {
-                color: #666;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>ヤッホー</h1>
-            <p>FastAPI便利</p>
-        </div>
-    </body>
-    </html>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .profile-pic {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="your-profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+        <h1>About Me</h1>
+        <p>Hello! My name is [Your Name]. I am a [Your Job/Position] at [Your Company/Organization]. I have a passion for [Your Passion/Hobby], and I enjoy spending my time [What You Enjoy Doing].</p>
+        <p>I graduated from [Your University] with a degree in [Your Degree]. During my studies, I developed a keen interest in [Your Interest].</p>
+        <p>In my free time, I like to [Your Hobbies]. I also love exploring new places and trying out different cuisines. Feel free to reach out to me at [Your Email Address]!</p>
+    </div>
+</body>
+</html>
+
     """
     return html_content
