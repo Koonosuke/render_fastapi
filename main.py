@@ -78,7 +78,7 @@ def get_index():
     </head>
     <body>
         <div class="container">
-            <img src="your-profile-pic.jpg" alt="プロフィール写真" class="profile-pic">
+            <img src="inu.png" alt="プロフィール写真" class="profile-pic">
             <h1>自己紹介</h1>
             <p>東京電機大学3年岸です。</p>
             <p>エントリーシートかかないと、</p>
