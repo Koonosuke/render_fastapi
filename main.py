@@ -40,11 +40,38 @@ def get_index():
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Index Page</title>
+        <title>課題ページ</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f0f0f0;
+            }
+            .container {
+                background-color: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                text-align: center;
+            }
+            h1 {
+                color: #333;
+            }
+            p {
+                color: #666;
+            }
+        </style>
     </head>
     <body>
-        <h1>Welcome to the Index Page</h1>
-        <p>This is a sample HTML page served by FastAPI.</p>
+        <div class="container">
+            <h1>ヤッホー</h1>
+            <p>FastAPI便利</p>
+        </div>
     </body>
     </html>
     """
